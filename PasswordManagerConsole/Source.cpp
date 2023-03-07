@@ -114,7 +114,7 @@ void CaseSwither()
 	}
 	case(2):
 	{
-		
+		GetPassword(PushPasswordsToMap());
 	}
 	case(0):
 		exit;
