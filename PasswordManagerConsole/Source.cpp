@@ -41,7 +41,7 @@ std::map<std::string, std::string>* PushPasswordsToMap()
 	std::map<std::string, std::string> *aPasswordBook= new std::map<std::string, std::string>;
 	while (aFile >> aSource >> aPassword) 
 	{
-		aPasswordBook->insert(aSource, aPassword);
+		aPasswordBook->insert(std::make_pair(aSource, aPassword));
 	}
 	return aPasswordBook;
 }
@@ -109,7 +109,7 @@ void CaseSwither()
 {
 	unsigned int CaseSwith{};
 	std::cout << "Pick action ";
-	std::cout << "1 - Add password\n2 - Get Password\n";
+	std::cout << "\n1 - Add password\n2 - Get Password\n";
 	std::cin >> CaseSwith;
 	switch (CaseSwith)
 	{
