@@ -60,7 +60,12 @@ void GetPassword(std::map<std::string, std::string>* aPasswordBook)
 	std::string aSource{};
 	std::cout << "Enter source of password";
 	std::cin >> aSource;
-	std::string DecryptedPassword{ DecryptPassword(aPasswordBook->at(aSource)) };
+	if (aPasswordBook->find(aSource) == aPasswordBook->end())
+	{
+		std::cout << "No such password\n\n";
+		return;
+	}
+	std::string DecryptedPassword{ DecryptPassword(aPasswordBook->find(aSource)->second) };
 	CopyToClipBoard(DecryptedPassword);
 	
 }
