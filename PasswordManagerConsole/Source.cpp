@@ -58,7 +58,7 @@ std::string DecryptPassword(std::string& aPassword)
 void GetPassword(std::map<std::string, std::string>* aPasswordBook)
 {
 	std::string aSource{};
-	std::cout << "Enter source of password";
+	std::cout << "Enter source of password - ";
 	std::cin >> aSource;
 	if (aPasswordBook->find(aSource) == aPasswordBook->end())
 	{
